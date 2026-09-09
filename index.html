@@ -1,0 +1,3749 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Just A Little Note ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    overflow-x:hidden;
+    background:#0a080d;
+    color:#fff;
+    font-family:"Cairo",sans-serif;
+}
+
+section{
+    width:100%;
+    position:relative;
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+.opening{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#0a080d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    pointer-events:none;
+    animation:openingHide 1.2s ease forwards;
+    animation-delay:2.4s;
+}
+
+.opening-content{
+    animation:openingIn 1.4s ease;
+}
+
+.opening-small{
+    color:#cdaabd;
+    font-family:"Playfair Display",serif;
+    font-size:11px;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+.opening h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(42px,8vw,95px);
+    font-weight:400;
+    font-style:italic;
+}
+
+.opening-line{
+    width:75px;
+    height:1px;
+    background:#c39bad;
+    margin:25px auto;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #422b3d 0%,
+            #1c141f 35%,
+            #0a080d 76%
+        );
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.12;
+
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px);
+
+    background-size:55px 55px;
+}
+
+.hero-glow{
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:#c878a5;
+
+    filter:blur(190px);
+
+    opacity:.12;
+}
+
+.orbit{
+    position:absolute;
+
+    width:530px;
+    height:530px;
+
+    border:1px solid rgba(220,183,205,.13);
+
+    border-radius:50%;
+
+    animation:rotate 25s linear infinite;
+}
+
+.orbit::before{
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    background:#e2bcd0;
+
+    border-radius:50%;
+
+    top:30px;
+    left:50%;
+
+    box-shadow:0 0 20px #d49ab9;
+}
+
+.orbit.two{
+    width:750px;
+    height:750px;
+
+    animation-direction:reverse;
+
+    opacity:.45;
+}
+
+.stars span{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.25;
+
+    animation:twinkle 3s infinite alternate;
+}
+
+.stars span:nth-child(1){top:18%;left:17%}
+.stars span:nth-child(2){top:28%;left:82%}
+.stars span:nth-child(3){top:72%;left:13%}
+.stars span:nth-child(4){top:80%;left:84%}
+.stars span:nth-child(5){top:13%;left:53%}
+.stars span:nth-child(6){top:55%;left:91%}
+.stars span:nth-child(7){top:86%;left:52%}
+.stars span:nth-child(8){top:45%;left:8%}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+
+    max-width:950px;
+
+    padding:30px;
+}
+
+.hero-label{
+    font-size:10px;
+
+    letter-spacing:6px;
+
+    color:#d9bbcc;
+
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(58px,10vw,125px);
+
+    line-height:.9;
+
+    font-weight:400;
+
+    font-style:italic;
+}
+
+.hero h1 span{
+    display:block;
+
+    font-size:clamp(12px,2vw,18px);
+
+    font-family:"Cairo",sans-serif;
+
+    font-style:normal;
+
+    letter-spacing:7px;
+
+    color:#dfcbd6;
+
+    margin-bottom:28px;
+}
+
+.hero p{
+    max-width:600px;
+
+    margin:35px auto 0;
+
+    color:#cfc5cf;
+
+    font-size:14px;
+
+    line-height:2.2;
+
+    font-weight:300;
+}
+
+.hero-btn{
+    margin-top:40px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:14px 27px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.45s;
+
+    backdrop-filter:blur(10px);
+}
+
+.hero-btn:hover{
+    background:#fff;
+
+    color:#1b141e;
+
+    transform:translateY(-5px);
+}
+
+.scroll-down{
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    color:#958c96;
+
+    z-index:5;
+}
+
+.scroll-down::after{
+    content:"";
+
+    display:block;
+
+    width:1px;
+
+    height:42px;
+
+    background:#b88da6;
+
+    margin:10px auto 0;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+    min-height:82vh;
+
+    background:#f5eff3;
+
+    color:#211a22;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    padding:100px 25px;
+}
+
+.intro-bg-word{
+    position:absolute;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(130px,22vw,330px);
+
+    color:rgba(155,113,137,.055);
+
+    white-space:nowrap;
+
+    user-select:none;
+}
+
+.intro-content{
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    max-width:850px;
+}
+
+.intro-number{
+    font-family:"Playfair Display",serif;
+
+    font-size:14px;
+
+    color:#a47791;
+
+    font-style:italic;
+
+    margin-bottom:25px;
+}
+
+.intro h2{
+    font-family:"Playfair Display",serif;
+
+    font-weight:400;
+
+    font-style:italic;
+
+    font-size:clamp(45px,7vw,88px);
+
+    line-height:1;
+}
+
+.intro h2 span{
+    display:block;
+
+    font-style:normal;
+
+    font-family:"Cairo",sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:5px;
+
+    color:#a07c90;
+
+    margin-bottom:20px;
+}
+
+.intro-line{
+    width:90px;
+
+    height:1px;
+
+    background:#c3a3b3;
+
+    margin:38px auto;
+}
+
+.intro p{
+    color:#746b73;
+
+    max-width:600px;
+
+    margin:auto;
+
+    line-height:2.2;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.photos{
+    min-height:100vh;
+
+    background:#f5eff3;
+
+    color:#211a22;
+
+    padding:110px 25px 150px;
+
+    overflow:hidden;
+}
+
+.photos-header{
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+}
+
+.section-label{
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    color:#a47791;
+
+    margin-bottom:17px;
+}
+
+.photos-header h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(43px,7vw,78px);
+
+    font-weight:400;
+
+    font-style:italic;
+}
+
+.photos-header p{
+    color:#81757e;
+
+    font-size:13px;
+
+    margin-top:15px;
+}
+
+.photo-stage{
+    position:relative;
+
+    max-width:1150px;
+
+    height:760px;
+
+    margin:70px auto 0;
+}
+
+.photo{
+    position:absolute;
+
+    width:190px;
+
+    padding:9px 9px 34px;
+
+    background:#fff;
+
+    box-shadow:0 20px 50px rgba(43,25,38,.16);
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transform:
+        translateY(80px)
+        scale(.85)
+        rotate(0deg);
+
+    transition:
+        opacity 1s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease;
+
+    will-change:transform;
+}
+
+.photo.show{
+    opacity:1;
+}
+
+.photo img{
+    display:block;
+
+    width:100%;
+
+    height:210px;
+
+    object-fit:cover;
+}
+
+.photo::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:12px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:35px;
+
+    height:1px;
+
+    background:#cdb4c1;
+}
+
+.photo:hover{
+    z-index:50;
+
+    box-shadow:
+        0 35px 80px rgba(44,24,39,.3);
+}
+
+.photo:nth-child(1){
+    left:6%;
+    top:7%;
+}
+
+.photo:nth-child(2){
+    left:26%;
+    top:1%;
+}
+
+.photo:nth-child(3){
+    left:48%;
+    top:11%;
+}
+
+.photo:nth-child(4){
+    left:71%;
+    top:4%;
+}
+
+.photo:nth-child(5){
+    left:14%;
+    top:39%;
+}
+
+.photo:nth-child(6){
+    left:38%;
+    top:42%;
+}
+
+.photo:nth-child(7){
+    left:62%;
+    top:38%;
+}
+
+.photo:nth-child(8){
+    left:3%;
+    top:68%;
+}
+
+.photo:nth-child(9){
+    left:29%;
+    top:70%;
+}
+
+.photo:nth-child(10){
+    left:56%;
+    top:67%;
+}
+
+.photo-orbit{
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    border:1px solid rgba(145,106,128,.08);
+
+    border-radius:50%;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   VIDEOS — SCATTERED EDITORIAL
+===================================================== */
+
+.videos{
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #3a2636 0%,
+            #171019 38%,
+            #09070c 78%
+        );
+
+    padding:125px 25px 150px;
+
+    overflow:hidden;
+}
+
+.videos::before{
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    border:1px solid rgba(220,183,205,.055);
+
+    box-shadow:
+        0 0 100px rgba(201,145,174,.04);
+
+    pointer-events:none;
+}
+
+.video-header{
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+.video-header .section-label{
+    color:#caa9bb;
+}
+
+.video-header h2{
+    max-width:850px;
+
+    margin:auto;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(45px,7vw,82px);
+
+    font-weight:400;
+
+    font-style:italic;
+
+    line-height:1.02;
+
+    color:#f5eaf1;
+}
+
+.video-header p{
+    margin-top:18px;
+
+    color:#a99da8;
+
+    font-size:13px;
+}
+
+
+/* MAIN SCATTER AREA */
+
+.video-scatter{
+    position:relative;
+
+    width:min(920px,100%);
+
+    height:650px;
+
+    margin:0 auto;
+
+    direction:ltr;
+}
+
+
+/* COMMON VIDEO CARD */
+
+.scattered-video{
+    position:absolute;
+
+    overflow:hidden;
+
+    background:#100c12;
+
+    border:1px solid rgba(255,255,255,.13);
+
+    border-radius:4px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.38);
+
+    isolation:isolate;
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        box-shadow .5s ease,
+        border-color .4s ease;
+
+    cursor:pointer;
+}
+
+.scattered-video:hover{
+    z-index:20;
+
+    box-shadow:
+        0 40px 90px rgba(0,0,0,.55),
+        0 0 35px rgba(211,165,190,.08);
+
+    border-color:rgba(220,183,205,.35);
+}
+
+
+/* VIDEO 1 */
+
+.scattered-video.video-one{
+
+    width:370px;
+
+    height:275px;
+
+    left:90px;
+
+    top:35px;
+
+    transform:
+        rotate(-5deg);
+}
+
+.scattered-video.video-one:hover{
+    transform:
+        rotate(-5deg)
+        translateY(-8px)
+        scale(1.035);
+}
+
+
+/* VIDEO 2 */
+
+.scattered-video.video-two{
+
+    width:370px;
+
+    height:275px;
+
+    right:80px;
+
+    top:90px;
+
+    transform:
+        rotate(5deg);
+}
+
+.scattered-video.video-two:hover{
+    transform:
+        rotate(5deg)
+        translateY(-8px)
+        scale(1.035);
+}
+
+
+/* VIDEO 3 */
+
+.scattered-video.video-three{
+
+    width:410px;
+
+    height:295px;
+
+    left:50%;
+
+    top:335px;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    z-index:8;
+}
+
+.scattered-video.video-three:hover{
+    transform:
+        translateX(-50%)
+        translateY(-8px)
+        rotate(-2deg)
+        scale(1.035);
+}
+
+
+/* VIDEO ELEMENT */
+
+.scattered-video video{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    opacity:.76;
+
+    transition:
+        transform 1s ease,
+        opacity .5s ease;
+}
+
+.scattered-video:hover video{
+
+    opacity:1;
+
+    transform:scale(1.04);
+}
+
+
+/* DARK OVERLAY */
+
+.scattered-video .video-dark{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.04) 20%,
+            rgba(8,5,10,.15) 45%,
+            rgba(8,5,10,.9) 100%
+        );
+
+    pointer-events:none;
+}
+
+
+/* NUMBER */
+
+.scattered-number{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    z-index:4;
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(12,8,14,.5);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(12px);
+
+    color:#ead9e2;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+
+    pointer-events:none;
+}
+
+
+/* CARD TEXT */
+
+.scattered-info{
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:45px;
+
+    z-index:4;
+
+    direction:ltr;
+
+    pointer-events:none;
+}
+
+.scattered-info span{
+
+    color:#d0adbf;
+
+    font-size:7px;
+
+    letter-spacing:3px;
+}
+
+.scattered-info h3{
+
+    margin-top:3px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:25px;
+
+    font-weight:400;
+
+    font-style:italic;
+
+    color:#fff;
+}
+
+
+/* PLAY BUTTON */
+
+.video-play{
+
+    position:absolute;
+
+    z-index:10;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.42);
+
+    background:rgba(15,10,17,.52);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    padding-left:3px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+    pointer-events:auto;
+}
+
+.video-play:hover{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.13);
+
+    background:rgba(220,190,208,.2);
+
+    box-shadow:
+        0 0 30px rgba(220,180,205,.25);
+}
+
+
+/* SMALL CONTROLS */
+
+.video-controls{
+
+    position:absolute;
+
+    left:12px;
+
+    right:12px;
+
+    bottom:10px;
+
+    z-index:12;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    opacity:.9;
+
+    direction:ltr;
+
+    pointer-events:auto;
+}
+
+.video-control-btn{
+
+    width:28px;
+
+    height:28px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(12,8,14,.6);
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    backdrop-filter:blur(10px);
+
+    transition:.25s;
+}
+
+.video-control-btn:hover{
+
+    background:rgba(220,190,208,.2);
+
+    border-color:rgba(255,255,255,.4);
+}
+
+
+/* PROGRESS */
+
+.video-progress{
+
+    flex:1;
+
+    height:3px;
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    background:rgba(255,255,255,.2);
+
+    border-radius:10px;
+
+    outline:none;
+
+    cursor:pointer;
+}
+
+.video-progress::-webkit-slider-thumb{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:9px;
+
+    height:9px;
+
+    border-radius:50%;
+
+    background:#ead5e0;
+
+    cursor:pointer;
+}
+
+.video-progress::-moz-range-thumb{
+
+    width:9px;
+
+    height:9px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#ead5e0;
+
+    cursor:pointer;
+}
+
+
+/* PLAYING */
+
+.scattered-video.playing .video-play{
+
+    padding-left:0;
+
+    font-size:14px;
+
+    background:rgba(220,190,208,.18);
+
+    box-shadow:
+        0 0 30px rgba(220,180,205,.25);
+}
+
+.scattered-video.playing .video-play::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-7px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(220,180,205,.3);
+
+    animation:videoRing 1.6s infinite;
+}
+
+
+@keyframes videoRing{
+
+    0%{
+        transform:scale(.9);
+        opacity:.8;
+    }
+
+    70%{
+        transform:scale(1.25);
+        opacity:0;
+    }
+
+    100%{
+        transform:scale(1.25);
+        opacity:0;
+    }
+
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-section{
+    min-height:100vh;
+
+    background:#f5eff3;
+
+    color:#211a22;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:110px 20px;
+
+    overflow:hidden;
+}
+
+.letter-wrap{
+    text-align:center;
+
+    width:100%;
+}
+
+.letter-wrap h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(42px,6vw,72px);
+
+    font-weight:400;
+
+    font-style:italic;
+}
+
+.letter-wrap > p{
+    color:#81747d;
+
+    font-size:13px;
+
+    margin:15px 0 50px;
+}
+
+.envelope{
+    width:380px;
+
+    height:250px;
+
+    position:relative;
+
+    margin:auto;
+
+    perspective:1000px;
+}
+
+.envelope-back{
+    position:absolute;
+
+    inset:0;
+
+    background:#d8bdcb;
+
+    box-shadow:
+        0 30px 80px rgba(50,30,45,.2);
+}
+
+.envelope-front{
+    position:absolute;
+
+    inset:0;
+
+    z-index:4;
+
+    background:#cda9ba;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.envelope-flap{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:130px;
+
+    background:#e3ccd7;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:5;
+}
+
+.seal{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-10%);
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:#6f4d63;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:8;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 30px rgba(60,35,55,.25);
+}
+
+.seal:hover{
+    transform:
+        translate(-50%,-10%)
+        scale(1.1);
+}
+
+.letter-paper{
+    position:absolute;
+
+    width:330px;
+
+    min-height:285px;
+
+    left:25px;
+
+    top:5px;
+
+    background:#fffdf9;
+
+    padding:35px 30px;
+
+    z-index:2;
+
+    box-shadow:
+        0 20px 50px rgba(30,20,30,.15);
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    pointer-events:none;
+
+    transition:
+        opacity .6s,
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.letter-paper h3{
+    font-family:"Playfair Display",serif;
+
+    font-size:28px;
+
+    font-weight:400;
+
+    font-style:italic;
+
+    margin-bottom:18px;
+}
+
+.letter-paper p{
+    color:#665d64;
+
+    font-size:12px;
+
+    line-height:2.1;
+}
+
+.close-letter{
+    margin-top:20px;
+
+    border:0;
+
+    background:#211a22;
+
+    color:white;
+
+    padding:9px 20px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+}
+
+.envelope.open .envelope-flap{
+    transform:rotateX(180deg);
+
+    z-index:1;
+}
+
+.envelope.open .letter-paper{
+    opacity:1;
+
+    transform:translateY(-230px);
+
+    pointer-events:auto;
+
+    z-index:10;
+}
+
+
+/* =====================================================
+   AFTER LETTER
+===================================================== */
+
+.after-letter{
+    min-height:90vh;
+
+    background:#0b090e;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    padding:100px 25px;
+}
+
+.after-letter::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:#b66f99;
+
+    filter:blur(180px);
+
+    opacity:.07;
+}
+
+.after-content{
+    position:relative;
+
+    z-index:2;
+
+    max-width:800px;
+}
+
+.after-number{
+    font-family:"Playfair Display",serif;
+
+    font-size:15px;
+
+    color:#cba6ba;
+
+    font-style:italic;
+
+    margin-bottom:25px;
+}
+
+.after-content h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,8vw,90px);
+
+    font-weight:400;
+
+    font-style:italic;
+
+    line-height:1;
+}
+
+.after-content p{
+    max-width:560px;
+
+    margin:30px auto 0;
+
+    color:#aaa0aa;
+
+    line-height:2.2;
+
+    font-size:13px;
+}
+
+.magic-line{
+    width:1px;
+
+    height:100px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #c9a4b9,
+            transparent
+        );
+
+    margin:45px auto 0;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #392433 0%,
+            #18111a 35%,
+            #09070c 75%
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.final-ring{
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border:1px solid rgba(213,172,198,.1);
+
+    border-radius:50%;
+
+    animation:rotate 30s linear infinite;
+}
+
+.final-ring::before{
+    content:"";
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:#d7a8c0;
+
+    top:30px;
+
+    left:50%;
+
+    box-shadow:0 0 20px #d7a8c0;
+}
+
+.final-content{
+    position:relative;
+
+    z-index:3;
+
+    padding:30px;
+}
+
+.final-small{
+    color:#c9a5b8;
+
+    font-size:10px;
+
+    letter-spacing:6px;
+
+    margin-bottom:25px;
+}
+
+.final h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(62px,10vw,125px);
+
+    font-weight:400;
+
+    font-style:italic;
+
+    line-height:.9;
+}
+
+.final p{
+    color:#b5abb5;
+
+    max-width:560px;
+
+    margin:35px auto 0;
+
+    line-height:2.2;
+
+    font-size:13px;
+}
+
+.final-heart{
+    margin-top:45px;
+
+    font-size:28px;
+
+    animation:heartbeat 1.7s infinite;
+}
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+.music-player{
+    position:fixed;
+
+    right:24px;
+
+    bottom:28px;
+
+    left:auto;
+
+    z-index:999999;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:8px 14px 8px 8px;
+
+    background:rgba(18,13,20,.82);
+
+    border:1px solid rgba(220,183,205,.25);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:60px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35),
+        0 0 30px rgba(200,120,165,.08);
+
+    transition:.4s ease;
+
+    direction:ltr;
+
+    pointer-events:auto;
+}
+
+.music-player:hover{
+    transform:translateY(-4px);
+
+    border-color:
+        rgba(220,183,205,.5);
+}
+
+.music-btn{
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ead5e0,
+            #cdaabd
+        );
+
+    color:#241923;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.35s;
+
+    position:relative;
+
+    z-index:999999;
+
+    pointer-events:auto;
+}
+
+.music-btn::after{
+    content:"";
+
+    position:absolute;
+
+    inset:-5px;
+
+    border-radius:50%;
+
+    border:1px solid transparent;
+
+    transition:.4s;
+}
+
+.music-player.playing .music-btn::after{
+
+    border-color:
+        rgba(220,170,200,.35);
+
+    animation:
+        musicRing 1.5s infinite;
+}
+
+.music-btn:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+        0 0 25px rgba(211,165,190,.4);
+}
+
+.music-info{
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:left;
+
+    min-width:145px;
+}
+
+.music-info span{
+    font-size:8px;
+
+    letter-spacing:3px;
+
+    color:#a994a4;
+}
+
+.music-info strong{
+    font-family:"Playfair Display",serif;
+
+    font-size:13px;
+
+    font-weight:400;
+
+    color:#eee2e9;
+
+    margin-top:2px;
+}
+
+.music-player.playing .music-btn{
+
+    animation:
+        musicPulse 1.6s infinite;
+}
+
+
+@keyframes musicRing{
+
+    0%{
+        transform:scale(.9);
+        opacity:.8;
+    }
+
+    70%{
+        transform:scale(1.3);
+        opacity:0;
+    }
+
+    100%{
+        transform:scale(1.3);
+        opacity:0;
+    }
+
+}
+
+@keyframes musicPulse{
+
+    0%,100%{
+        box-shadow:
+            0 0 0 rgba(220,170,200,0);
+    }
+
+    50%{
+        box-shadow:
+            0 0 28px rgba(220,170,200,.35);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes openingIn{
+
+    from{
+        opacity:0;
+
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes openingHide{
+
+    to{
+        opacity:0;
+
+        visibility:hidden;
+    }
+
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.1;
+    }
+
+    to{
+        opacity:.8;
+    }
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .orbit{
+        width:350px;
+        height:350px;
+    }
+
+    .orbit.two{
+        width:490px;
+        height:490px;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .hero h1 span{
+        font-size:12px;
+
+        letter-spacing:4px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+
+    /* PHOTOS */
+
+    .photos{
+        padding-left:15px;
+
+        padding-right:15px;
+    }
+
+    .photo-stage{
+        height:auto;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:28px 12px;
+
+        margin-top:50px;
+    }
+
+    .photo-orbit{
+        display:none;
+    }
+
+    .photo{
+        position:relative;
+
+        left:auto!important;
+
+        top:auto!important;
+
+        width:100%;
+
+        transform:
+            rotate(0deg)
+            translateY(60px)
+            scale(.85)!important;
+    }
+
+    .photo.show{
+        transform:
+            rotate(-3deg)
+            translateY(0)
+            scale(1)!important;
+    }
+
+    .photo:nth-child(even).show{
+        transform:
+            rotate(3deg)
+            translateY(0)
+            scale(1)!important;
+    }
+
+    .photo img{
+        height:180px;
+    }
+
+
+    /* VIDEOS */
+
+    .videos{
+        padding:
+            100px
+            15px
+            130px;
+    }
+
+    .video-header{
+        margin-bottom:30px;
+    }
+
+    .video-header h2{
+        font-size:45px;
+    }
+
+    .video-header p{
+        font-size:11px;
+        line-height:1.9;
+    }
+
+    .video-scatter{
+
+        width:100%;
+
+        height:690px;
+
+        margin-top:5px;
+    }
+
+    .scattered-video.video-one{
+
+        width:245px;
+
+        height:190px;
+
+        left:3%;
+
+        top:25px;
+
+        transform:
+            rotate(-5deg);
+    }
+
+    .scattered-video.video-two{
+
+        width:245px;
+
+        height:190px;
+
+        right:3%;
+
+        top:80px;
+
+        transform:
+            rotate(5deg);
+    }
+
+    .scattered-video.video-three{
+
+        width:275px;
+
+        height:205px;
+
+        left:50%;
+
+        top:300px;
+
+        transform:
+            translateX(-50%)
+            rotate(-2deg);
+    }
+
+    .scattered-video.video-one:hover{
+
+        transform:
+            rotate(-5deg)
+            translateY(-5px)
+            scale(1.025);
+    }
+
+    .scattered-video.video-two:hover{
+
+        transform:
+            rotate(5deg)
+            translateY(-5px)
+            scale(1.025);
+    }
+
+    .scattered-video.video-three:hover{
+
+        transform:
+            translateX(-50%)
+            translateY(-5px)
+            rotate(-2deg)
+            scale(1.025);
+    }
+
+    .scattered-info{
+
+        left:13px;
+
+        bottom:39px;
+    }
+
+    .scattered-info h3{
+
+        font-size:19px;
+    }
+
+    .scattered-info span{
+
+        font-size:6px;
+
+        letter-spacing:2px;
+    }
+
+    .scattered-number{
+
+        width:28px;
+
+        height:28px;
+
+        top:10px;
+
+        right:10px;
+
+        font-size:8px;
+    }
+
+    .video-play{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:14px;
+    }
+
+    .video-controls{
+
+        left:8px;
+
+        right:8px;
+
+        bottom:7px;
+    }
+
+    .video-control-btn{
+
+        width:25px;
+
+        height:25px;
+
+        font-size:10px;
+    }
+
+
+    /* LETTER */
+
+    .envelope{
+        transform:scale(.82);
+    }
+
+
+    /* FINAL */
+
+    .final-ring{
+        width:350px;
+
+        height:350px;
+    }
+
+
+    /* MUSIC */
+
+    .music-player{
+
+        right:15px;
+
+        bottom:18px;
+
+        left:auto;
+
+        padding:6px;
+    }
+
+    .music-info{
+        display:none;
+    }
+
+    .music-btn{
+
+        width:50px;
+
+        height:50px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:420px){
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .photo img{
+        height:155px;
+    }
+
+    .letter-wrap h2{
+        font-size:39px;
+    }
+
+    .envelope{
+        transform:scale(.72);
+    }
+
+    .video-header h2{
+        font-size:39px;
+    }
+
+    .video-scatter{
+
+        height:620px;
+    }
+
+    .scattered-video.video-one{
+
+        width:205px;
+
+        height:165px;
+
+        left:2%;
+
+        top:25px;
+    }
+
+    .scattered-video.video-two{
+
+        width:205px;
+
+        height:165px;
+
+        right:2%;
+
+        top:70px;
+    }
+
+    .scattered-video.video-three{
+
+        width:240px;
+
+        height:180px;
+
+        top:270px;
+    }
+
+    .scattered-info h3{
+
+        font-size:17px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media(max-width:360px){
+
+    .scattered-video.video-one,
+    .scattered-video.video-two{
+
+        width:190px;
+
+        height:150px;
+    }
+
+    .scattered-video.video-three{
+
+        width:220px;
+
+        height:165px;
+    }
+
+}
+
+
+/* =====================================================
+   FULLSCREEN
+===================================================== */
+
+.scattered-video:fullscreen{
+
+    width:100vw;
+
+    height:100vh;
+
+    position:fixed;
+
+    inset:0;
+
+    transform:none!important;
+
+    border:0;
+
+    border-radius:0;
+
+    background:#000;
+}
+
+.scattered-video:fullscreen video{
+
+    object-fit:contain;
+
+    background:#000;
+}
+
+.scattered-video:-webkit-full-screen{
+
+    width:100vw;
+
+    height:100vh;
+
+    position:fixed;
+
+    inset:0;
+
+    transform:none!important;
+
+    border:0;
+
+    border-radius:0;
+
+    background:#000;
+}
+
+.scattered-video:-webkit-full-screen video{
+
+    object-fit:contain;
+
+    background:#000;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     OPENING
+===================================================== -->
+
+<div class="opening" id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-small">
+            A LITTLE SOMETHING
+        </div>
+
+        <h1>
+            Just A Little Note ♡
+        </h1>
+
+        <div class="opening-line"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-glow"></div>
+
+    <div class="orbit"></div>
+
+    <div class="orbit two"></div>
+
+
+    <div class="stars">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            A LITTLE SOMETHING ✦
+        </div>
+
+        <h1>
+
+            <span>
+                FOR SOMEONE SPECIAL
+            </span>
+
+            Just A Little Note
+
+        </h1>
+
+
+        <p>
+
+            مش كل حاجة محتاجة مناسبة كبيرة...
+
+            أحيانًا تفصيلة صغيرة،
+
+            صورة حلوة،
+
+            وكلمة بسيطة بيكونوا كفاية.
+
+        </p>
+
+
+        <a
+            href="#intro"
+            class="hero-btn"
+            id="heroBtn">
+
+            شوفي اللي جوا
+
+            ↓
+
+        </a>
+
+    </div>
+
+
+    <div class="scroll-down">
+
+        SCROLL
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="intro">
+
+    <div class="intro-bg-word">
+        little
+    </div>
+
+
+    <div class="intro-content">
+
+        <div class="intro-number">
+            01 — A LITTLE INTRO
+        </div>
+
+
+        <h2>
+
+            <span>
+                SOMETHING SIMPLE
+            </span>
+
+            لأن التفاصيل الصغيرة
+            أحيانًا بتقول كتير.
+
+        </h2>
+
+
+        <div class="intro-line"></div>
+
+
+        <p>
+
+            مساحة صغيرة معمولة عشان تجمع
+
+            صور وفيديوهات وكلمة حلوة...
+
+            بطريقة مختلفة، بسيطة،
+
+            ومن غير أي مبالغة.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTOS
+===================================================== -->
+
+<section class="photos">
+
+    <div class="photos-header">
+
+        <div class="section-label">
+            02 — A FEW MOMENTS
+        </div>
+
+        <h2>
+            Little snapshots ♡
+        </h2>
+
+        <p>
+            كل صورة ليها مكانها.
+        </p>
+
+    </div>
+
+
+    <div class="photo-stage">
+
+        <div class="photo-orbit"></div>
+
+
+        <div class="photo">
+            <img src="images/photo1.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo2.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo3.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo4.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo5.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo6.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo7.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo8.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo9.jpg" alt="">
+        </div>
+
+        <div class="photo">
+            <img src="images/photo10.jpg" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VIDEOS — NEW SCATTERED DESIGN
+===================================================== -->
+
+<section class="videos" id="videos">
+
+    <div class="video-header">
+
+        <div class="section-label">
+            03 — A LITTLE MOTION
+        </div>
+
+        <h2>
+            Some things<br>
+            look better in motion.
+        </h2>
+
+        <p>
+            اضغطي على أي فيديو وشوفيه بالصوت ♡
+        </p>
+
+    </div>
+
+
+    <div class="video-scatter">
+
+
+        <!-- VIDEO 1 -->
+
+        <div class="scattered-video video-one"
+             data-video="video1">
+
+            <video
+                id="video1"
+                src="videos/video1.mp4"
+                loop
+                playsinline
+                preload="metadata">
+            </video>
+
+            <div class="video-dark"></div>
+
+            <div class="scattered-number">
+                01
+            </div>
+
+            <div class="scattered-info">
+
+                <span>
+                    A LITTLE MOTION
+                </span>
+
+                <h3>
+                    A Little Memory
+                </h3>
+
+            </div>
+
+            <button
+                class="video-play"
+                type="button"
+                aria-label="تشغيل الفيديو">
+
+                ▶️
+
+            </button>
+
+            <div class="video-controls">
+
+                <button
+                    class="video-control-btn mute-btn"
+                    type="button"
+                    aria-label="الصوت">
+
+                    🔊
+
+                </button>
+
+                <input
+                    class="video-progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="تقدم الفيديو">
+
+                <button
+                    class="video-control-btn fullscreen-btn"
+                    type="button"
+                    aria-label="تكبير الفيديو">
+
+                    ⛶
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="scattered-video video-two"
+             data-video="video2">
+
+            <video
+                id="video2"
+                src="videos/video2.mp4"
+                loop
+                playsinline
+                preload="metadata">
+            </video>
+
+            <div class="video-dark"></div>
+
+            <div class="scattered-number">
+                02
+            </div>
+
+            <div class="scattered-info">
+
+                <span>
+                    JUST SMILE
+                </span>
+
+                <h3>
+                    Just Smile
+                </h3>
+
+            </div>
+
+            <button
+                class="video-play"
+                type="button"
+                aria-label="تشغيل الفيديو">
+
+                ▶️
+
+            </button>
+
+            <div class="video-controls">
+
+                <button
+                    class="video-control-btn mute-btn"
+                    type="button"
+                    aria-label="الصوت">
+
+                    🔊
+
+                </button>
+
+                <input
+                    class="video-progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="تقدم الفيديو">
+
+                <button
+                    class="video-control-btn fullscreen-btn"
+                    type="button"
+                    aria-label="تكبير الفيديو">
+
+                    ⛶
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="scattered-video video-three"
+             data-video="video3">
+
+            <video
+                id="video3"
+                src="videos/video3.mp4"
+                loop
+                playsinline
+                preload="metadata">
+            </video>
+
+            <div class="video-dark"></div>
+
+            <div class="scattered-number">
+                03
+            </div>
+
+            <div class="scattered-info">
+
+                <span>
+                    ONE MORE
+                </span>
+
+                <h3>
+                    One More
+                </h3>
+
+            </div>
+
+            <button
+                class="video-play"
+                type="button"
+                aria-label="تشغيل الفيديو">
+
+                ▶️
+
+            </button>
+
+            <div class="video-controls">
+
+                <button
+                    class="video-control-btn mute-btn"
+                    type="button"
+                    aria-label="الصوت">
+
+                    🔊
+
+                </button>
+
+                <input
+                    class="video-progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    step="0.1"
+                    aria-label="تقدم الفيديو">
+
+                <button
+                    class="video-control-btn fullscreen-btn"
+                    type="button"
+                    aria-label="تكبير الفيديو">
+
+                    ⛶
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section class="letter-section">
+
+    <div class="letter-wrap">
+
+        <div class="section-label">
+            04 — PRIVATE NOTE
+        </div>
+
+        <h2>
+            Something is waiting here...
+        </h2>
+
+        <p>
+            في حاجة صغيرة مستخبية هنا ♡
+        </p>
+
+
+        <div
+            class="envelope"
+            id="envelope">
+
+
+            <div class="envelope-back"></div>
+
+
+            <div class="letter-paper">
+
+                <h3>
+                    Just For You ♡
+                </h3>
+
+                <p>
+
+                    أتمنى السنة الجديدة تكون
+                    أخف وأجمل،
+                    ومليانة حاجات تخليكي تبتسمي
+                    من قلبك.
+
+                    <br><br>
+
+                    Happy Birthday ya Ro7 alby ♡...
+
+                    وعقبال سنين كتير حلوة جاية.
+
+                </p>
+
+
+                <button
+                    class="close-letter"
+                    onclick="closeLetter(event)">
+
+                    اقفلي الرسالة
+
+                </button>
+
+            </div>
+
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-front"></div>
+
+
+            <div
+                class="seal"
+                onclick="openLetter()">
+
+                ♡
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AFTER LETTER
+===================================================== -->
+
+<section class="after-letter">
+
+    <div class="after-content">
+
+        <div class="after-number">
+            05 — ONE LAST THING
+        </div>
+
+
+        <h2>
+
+            Keep the<br>
+            good energy.
+
+        </h2>
+
+
+        <p>
+
+            الأيام الحلوة مش لازم تكون كبيرة...
+
+            ساعات بتبدأ بحاجة صغيرة جدًا،
+
+            زي ابتسامة،
+
+            لحظة حلوة،
+
+            أو كلمة جت في وقتها.
+
+        </p>
+
+
+        <div class="magic-line"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+    <div class="final-ring"></div>
+
+
+    <div class="final-content">
+
+        <div class="final-small">
+            AND FINALLY...
+        </div>
+
+
+        <h2>
+            Happy Birthday ♡
+        </h2>
+
+
+        <p>
+
+            أتمنى يومك يكون جميل،
+
+            وسنتك الجديدة تكون مليانة
+
+            راحة، ضحك، نجاح،
+
+            وحاجات حلوة تستاهليها.
+
+        </p>
+
+
+        <div class="final-heart">
+            ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSIC PLAYER
+===================================================== -->
+
+<div
+    class="music-player"
+    id="musicPlayer">
+
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto">
+
+        <source
+            src="music/song.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <button
+        class="music-btn"
+        id="musicBtn"
+        type="button"
+        aria-label="تشغيل الموسيقى">
+
+        ▶️
+
+    </button>
+
+
+    <div class="music-info">
+
+        <span>
+            NOW PLAYING
+        </span>
+
+        <strong>
+            Just A Little Song ♡
+        </strong>
+
+    </div>
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   MUSIC PLAYER
+===================================================== */
+
+const bgMusic =
+    document.getElementById("bgMusic");
+
+const musicPlayer =
+    document.getElementById("musicPlayer");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+
+function updateMusicButton(){
+
+    if(bgMusic.paused){
+
+        musicBtn.innerHTML = "▶️";
+
+        musicPlayer.classList.remove("playing");
+
+        musicBtn.setAttribute(
+            "aria-label",
+            "تشغيل الموسيقى"
+        );
+
+    }
+
+    else{
+
+        musicBtn.innerHTML = "❚❚";
+
+        musicPlayer.classList.add("playing");
+
+        musicBtn.setAttribute(
+            "aria-label",
+            "إيقاف الموسيقى"
+        );
+
+    }
+
+}
+
+
+function startMusic(){
+
+    bgMusic
+        .play()
+        .then(()=>{
+
+            updateMusicButton();
+
+        })
+        .catch(()=>{
+
+            updateMusicButton();
+
+        });
+
+}
+
+
+function toggleMusic(){
+
+    if(bgMusic.paused){
+
+        startMusic();
+
+    }
+
+    else{
+
+        bgMusic.pause();
+
+        updateMusicButton();
+
+    }
+
+}
+
+
+musicBtn.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+        toggleMusic();
+
+    }
+);
+
+
+bgMusic.addEventListener(
+    "play",
+    updateMusicButton
+);
+
+bgMusic.addEventListener(
+    "pause",
+    updateMusicButton
+);
+
+
+const heroBtn =
+    document.getElementById("heroBtn");
+
+if(heroBtn){
+
+    heroBtn.addEventListener(
+        "click",
+        function(){
+
+            startMusic();
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   VIDEO SYSTEM
+===================================================== */
+
+const videoCards =
+    document.querySelectorAll(
+        ".scattered-video"
+    );
+
+
+const allVideos =
+    document.querySelectorAll(
+        ".scattered-video video"
+    );
+
+
+/* تشغيل فيديو واحد وإيقاف الباقي */
+
+function playVideo(video){
+
+    allVideos.forEach(
+        otherVideo=>{
+
+            if(otherVideo !== video){
+
+                otherVideo.pause();
+
+            }
+
+        }
+    );
+
+    video.play().catch(()=>{});
+
+}
+
+
+/* =====================================================
+   PLAY / PAUSE
+===================================================== */
+
+videoCards.forEach(card=>{
+
+    const video =
+        card.querySelector("video");
+
+    const playButton =
+        card.querySelector(".video-play");
+
+
+    /* زر التشغيل */
+
+    playButton.addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            if(video.paused){
+
+                playVideo(video);
+
+            }
+
+            else{
+
+                video.pause();
+
+            }
+
+        }
+    );
+
+
+    /* الضغط على الفيديو نفسه */
+
+    video.addEventListener(
+        "click",
+        function(event){
+
+            event.stopPropagation();
+
+
+            if(video.paused){
+
+                playVideo(video);
+
+            }
+
+            else{
+
+                video.pause();
+
+            }
+
+        }
+    );
+
+
+    /* عند التشغيل */
+
+    video.addEventListener(
+        "play",
+        function(){
+
+            card.classList.add(
+                "playing"
+            );
+
+            playButton.innerHTML =
+                "❚❚";
+
+        }
+    );
+
+
+    /* عند الإيقاف */
+
+    video.addEventListener(
+        "pause",
+        function(){
+
+            card.classList.remove(
+                "playing"
+            );
+
+            playButton.innerHTML =
+                "▶️";
+
+        }
+    );
+
+
+    /* =================================================
+       MUTE
+    ================================================= */
+
+    const muteButton =
+        card.querySelector(".mute-btn");
+
+
+    muteButton.addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            video.muted =
+                !video.muted;
+
+
+            muteButton.innerHTML =
+                video.muted
+                    ? "🔇"
+                    : "🔊";
+
+        }
+    );
+
+
+    /* =================================================
+       PROGRESS
+    ================================================= */
+
+    const progress =
+        card.querySelector(".video-progress");
+
+
+    video.addEventListener(
+        "timeupdate",
+        function(){
+
+            if(video.duration){
+
+                progress.value =
+                    (video.currentTime /
+                    video.duration) * 100;
+
+            }
+
+        }
+    );
+
+
+    progress.addEventListener(
+        "input",
+        function(event){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            if(video.duration){
+
+                video.currentTime =
+                    (progress.value / 100)
+                    * video.duration;
+
+            }
+
+        }
+    );
+
+
+    /* =================================================
+       FULLSCREEN
+    ================================================= */
+
+    const fullscreenButton =
+        card.querySelector(".fullscreen-btn");
+
+
+    fullscreenButton.addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            openVideoFullscreen(
+                card,
+                video
+            );
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   FULLSCREEN FUNCTION
+===================================================== */
+
+function openVideoFullscreen(card,video){
+
+    if(card.requestFullscreen){
+
+        card.requestFullscreen();
+
+        return;
+
+    }
+
+
+    if(card.webkitRequestFullscreen){
+
+        card.webkitRequestFullscreen();
+
+        return;
+
+    }
+
+
+    /* Safari / iPhone fallback */
+
+    if(video.webkitEnterFullscreen){
+
+        video.webkitEnterFullscreen();
+
+        return;
+
+    }
+
+}
+
+
+/* =====================================================
+   FULLSCREEN CHANGE
+===================================================== */
+
+document.addEventListener(
+    "fullscreenchange",
+    function(){
+
+        document.body.style.overflow =
+            document.fullscreenElement
+                ? "hidden"
+                : "";
+
+    }
+);
+
+document.addEventListener(
+    "webkitfullscreenchange",
+    function(){
+
+        document.body.style.overflow =
+            document.webkitFullscreenElement
+                ? "hidden"
+                : "";
+
+    }
+);
+
+
+/* =====================================================
+   OPEN LETTER
+===================================================== */
+
+function openLetter(){
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    envelope.classList.add(
+        "open"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE LETTER
+===================================================== */
+
+function closeLetter(event){
+
+    event.stopPropagation();
+
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    envelope.classList.remove(
+        "open"
+    );
+
+}
+
+
+/* =====================================================
+   PHOTO SCROLL ANIMATION
+===================================================== */
+
+const photos =
+    document.querySelectorAll(
+        ".photo"
+    );
+
+
+const photoObserver =
+    new IntersectionObserver(
+
+        (entries)=>{
+
+            entries.forEach(
+                (entry)=>{
+
+                    if(entry.isIntersecting){
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:.15
+        }
+
+    );
+
+
+photos.forEach(
+    (photo,index)=>{
+
+        photoObserver.observe(
+            photo
+        );
+
+        photo.style.transitionDelay =
+            `${index * 0.08}s`;
+
+    }
+);
+
+
+/* =====================================================
+   PHOTO MOUSE TILT
+===================================================== */
+
+photos.forEach(
+    (photo,index)=>{
+
+        photo.addEventListener(
+            "mousemove",
+            (e)=>{
+
+                if(window.innerWidth <= 700)
+                    return;
+
+
+                const rect =
+                    photo.getBoundingClientRect();
+
+
+                const x =
+                    e.clientX -
+                    rect.left;
+
+
+                const y =
+                    e.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateY =
+                    (x - centerX) / 15;
+
+
+                const rotateX =
+                    (centerY - y) / 15;
+
+
+                photo.style.marginTop =
+                    "0";
+
+
+                photo.style.transform =
+                    `perspective(700px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     scale(1.08)`;
+
+            }
+        );
+
+
+        photo.addEventListener(
+            "mouseleave",
+            ()=>{
+
+                if(window.innerWidth <= 700)
+                    return;
+
+
+                const rotations =
+                    [
+                        -9,
+                        5,
+                        -5,
+                        8,
+                        7,
+                        -8,
+                        6,
+                        5,
+                        -6,
+                        8
+                    ];
+
+
+                photo.style.transform =
+                    `rotate(${rotations[index]}deg)
+                     scale(1)`;
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   IMAGE FALLBACK
+===================================================== */
+
+document
+    .querySelectorAll("img")
+    .forEach(img=>{
+
+        img.addEventListener(
+            "error",
+            function(){
+
+                this.style.background =
+                    "linear-gradient(135deg,#d9bfcc,#eee4e9)";
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+window.addEventListener(
+    "load",
+    ()=>{
+
+        setTimeout(
+            ()=>{
+
+                const opening =
+                    document.getElementById(
+                        "opening"
+                    );
+
+
+                if(opening){
+
+                    opening.style.display =
+                        "none";
+
+                }
+
+            },
+            3700
+        );
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL STATES
+===================================================== */
+
+updateMusicButton();
+
+
+</script>
+
+</body>
+</html>
